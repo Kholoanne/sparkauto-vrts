@@ -1,0 +1,48 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef0f2;--sf:#fff;--ink:#1d2329;--mut:#5d6874;--ln:#d3d8de;--br:#1f3a4d;--ac:#e8a317;--ok:#1b7a43;--wn:#b25e00;--bd:#b3261e;--bl:#2456a6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181c;--sf:#1e242a;--ink:#e8ebee;--mut:#9aa5b0;--ln:#34404a;--br:#2c516b;--ac:#f0b73a;--ok:#4cc380;--wn:#f0a24b;--bd:#ff8a80;--bl:#8ab4f8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181c;--sf:#1e242a;--ink:#e8ebee;--mut:#9aa5b0;--ln:#34404a;--br:#2c516b;--ac:#f0b73a;--ok:#4cc380;--wn:#f0a24b;--bd:#ff8a80;--bl:#8ab4f8;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+header{background:var(--br);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:4px solid var(--ac)}
+.shell{display:grid;grid-template-columns:190px 1fr}
+nav{background:var(--sf);border-right:1px solid var(--ln);padding:12px;display:flex;flex-direction:column;gap:4px}
+nav button{text-align:left;background:transparent;border:0;padding:10px 12px;border-radius:6px;cursor:pointer;font:inherit;color:var(--ink)}
+nav button[aria-current=true]{background:var(--br);color:#fff;font-weight:600}
+#out{margin-top:auto;border:1px solid var(--ln)!important}
+@media(max-width:700px){.shell{grid-template-columns:1fr}nav{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--ln)}#out{margin-top:0}}
+main{padding:20px;min-width:0}
+h2{margin:0}h3{margin:14px 0 6px;font-size:1rem}
+.sub{color:var(--mut);margin:2px 0 14px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:16px;margin-bottom:16px}
+.alert{border-color:var(--bd);color:var(--bd)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--ln)}
+th{font-size:.85rem;color:var(--mut)}
+button,select,input,textarea{font:inherit;color:inherit;min-height:44px}
+.btn{background:var(--br);color:#fff;border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--ln)}
+.btn.del{background:transparent;color:var(--bd);border:1px solid var(--bd)}
+.btn.sm{padding:4px 10px;min-height:36px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+label{display:block;font-size:.9rem;color:var(--mut);margin-bottom:10px}
+input,select,textarea{display:block;width:100%;margin-top:3px;padding:8px;border:1px solid var(--ln);border-radius:6px;background:var(--sf)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 14px}
+.chk{display:flex;gap:8px;align-items:center;color:var(--ink)}
+.chk input{width:20px;height:20px;min-height:0;margin:0}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.8rem;font-weight:600;border:1px solid currentColor}
+.t-Awaiting{color:var(--wn)}.t-In{color:var(--bl)}.t-Ready{color:var(--ok)}
+.steps{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 12px}
+.steps li{flex:1;border-top:4px solid var(--ln);padding-top:4px;font-size:.85rem;color:var(--mut)}
+.steps li.on{border-color:var(--ok);color:var(--ink);font-weight:600}
+.low{color:var(--bd);font-weight:600}
+dialog{border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--ink);width:min(680px,94vw);max-height:92vh;padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.total{font-size:1.1rem;font-weight:700;text-align:right}
+.msg{color:var(--bd);min-height:1.4em;margin:6px 0}
+#login{max-width:360px;margin:10vh auto;padding:0 20px}
+.hide{display:none!important}
+.row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}
+@media print{body *{visibility:hidden}#inv,#inv *{visibility:visible}#inv{position:absolute;inset:0;width:100%}}

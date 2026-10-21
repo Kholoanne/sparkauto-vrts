@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SparkAuto VRTS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="login">
+ <div class="panel">
+  <h1 style="margin-top:0;font-size:1.3rem">SPARK AUTO WORKSHOP</h1>
+  <label>Username<input id="u" autocomplete="username" placeholder="enter username"></label>
+  <label>Password<input id="p" type="password" autocomplete="current-password" placeholder="enter password"></label>
+  <div class="msg" id="lmsg" role="alert"></div>
+  <button class="btn" id="lbtn" style="width:100%">Login</button>
+  <p style="text-align:center"><button class="btn alt sm" onclick="forgot()">Forgot password?</button></p>
+  <p class="sub" style="text-align:center;font-size:.8rem">Authorised users only</p>
+  <p class="sub" style="font-size:.8rem">Demo logins: manager / manager123, frontoffice / office123, mechanic / mechanic123</p>
+ </div>
+</section>
+
+<div id="app" class="hide">
+ <header><b>SPARK AUTO WORKSHOP</b><span id="who"></span></header>
+ <div class="shell">
+  <nav id="nav">
+   <button data-v="jobs">Jobs</button>
+   <button data-v="parts">Parts</button>
+   <button data-v="mechs" data-p="mechs">Mechanics</button>
+   <button data-v="invoices" data-p="invoice">Invoices</button>
+   <button data-v="reports" data-p="reports">Reports</button>
+   <button id="out">Logout</button>
+  </nav>
+  <main id="view" tabindex="-1"></main>
+ </div>
+</div>
+<dialog id="dlg"></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
